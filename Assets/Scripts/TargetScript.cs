@@ -2,22 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DespawnScript : MonoBehaviour
+public class TargetScript : MonoBehaviour
 {
+    private float x;
+    private float z;
+
     // Start is called before the first frame update
     void Start()
     {
-        //Invoke("destroy", 3);
+        x = transform.position.x;
+        z = transform.position.z;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void destroy()
-    {
-        Destroy(gameObject);
+        transform.position = new Vector3(x, transform.position.y, z);
     }
 }

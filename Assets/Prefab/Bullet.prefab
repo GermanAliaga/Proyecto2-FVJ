@@ -34,8 +34,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071071, z: -0, w: 0.70710653}
   m_LocalPosition: {x: -4.6, y: 16.6, z: -3}
-  m_LocalScale: {x: 1.6718, y: 1.6718, z: 1.6718}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -102,7 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myTransform: {fileID: 6663577368520220943}
-  utalRigidbody: {fileID: 0}
+  utalRigidbody: {fileID: 2060057351901853364}
+  isTrigger: 0
 --- !u!114 &37051512082271138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,8 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d461a4acac6224ea0190033ce4736c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myCollider: {fileID: 0}
-  myRenderer: {fileID: 0}
+  myCollider: {fileID: 6783908943592639298}
+  myRenderer: {fileID: 2042924234505946329}
 --- !u!114 &2060057351901853364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +134,7 @@ MonoBehaviour:
   dontUseGravity: 0
   mass: 30
   isStatic: 0
-  collider: {fileID: 0}
+  collider: {fileID: 6783908943592639298}
 --- !u!120 &2919942965932520705
 LineRenderer:
   serializedVersion: 2

@@ -20,19 +20,34 @@ public class LaunchScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        createNewP();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E)) 
-        { 
-            newP = Instantiate(proyectil, apuntado.transform.position, apuntado.transform.rotation);
 
-            //newP.GetComponent<UtalSphereCollider>
+        if (newP.GetComponent<UtalRigidbody>().isStatic)
+        {
+            newP.transform.position = apuntado.transform.position;
+            newP.transform.rotation = apuntado.transform.rotation;
             newP.GetComponent<UtalRigidbody>().mass = mass;
             newP.GetComponent<UtalRigidbody>().velocity = (apuntado.transform.position - transform.position) * speed;
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.E)) 
+        {
+            if (newP.GetComponent<UtalRigidbody>().isStatic)
+            {
+                Invoke("createNewP", 3);
+            }
+
+            newP.GetComponent<UtalRigidbody>().isStatic = false;
+            newP.GetComponent<UtalRigidbody>().enabled = true;
+            newP.GetComponent<MeshRenderer>().enabled = true;
+
+            //Invoke("destroy", 3);
         }
 
 
@@ -103,5 +118,20 @@ public class LaunchScript : MonoBehaviour
     public Vector3 getVSpeed()
     {
         return (apuntado.transform.position - transform.position) * speed;
+    }
+
+    private void createNewP()
+    {
+        newP = Instantiate(proyectil, apuntado.transform.position, apuntado.transform.rotation);
+
+        //newP.GetComponent<UtalSphereCollider>
+        newP.GetComponent<UtalRigidbody>().isStatic = true;
+        newP.GetComponent<UtalRigidbody>().enabled = false;
+        newP.GetComponent<MeshRenderer>().enabled = false;
+    }
+
+    private void destroy()
+    {
+        Destroy(newP);
     }
 }

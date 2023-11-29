@@ -7,7 +7,7 @@ public class DrawTrayectory : MonoBehaviour
     public LineRenderer lineRenderer;
     public int N = 120;
     public int framesPerSecond = 20;
-    public Rigidbody utalRBody;
+    public UtalRigidbody utalRBody;
     // Start is called before the first frame update
     void Start()
     {
