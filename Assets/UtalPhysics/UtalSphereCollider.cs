@@ -24,7 +24,15 @@ public class UtalSphereCollider : UtalCollider
 
                 utalRigidbody?.UtalOnCollisionEnter(utalCollision);
                 other.utalRigidbody?.UtalOnCollisionEnter(utalCollisionOther);
-                return true;
+                if (isTrigger || other.isTrigger)
+                {
+                    CheckTrigger(other);
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
         }
         UtalBoxCollider otherBoxCollider = other as UtalBoxCollider;
@@ -50,9 +58,17 @@ public class UtalSphereCollider : UtalCollider
                     utalCollisionOther.collisionPoint = utalCollision.collisionPoint;
                     utalCollisionOther.other = this;
 
-                    utalRigidbody?.UtalOnCollisionEnter(utalCollision);
-                    other.utalRigidbody?.UtalOnCollisionEnter(utalCollisionOther);
-                    return true;
+                    if (isTrigger || other.isTrigger)
+                    {
+                        CheckTrigger(other);
+                        return false;
+                    }
+                    else
+                    {
+                        utalRigidbody?.UtalOnCollisionEnter(utalCollision);
+                        other.utalRigidbody?.UtalOnCollisionEnter(utalCollisionOther);
+                        return true;
+                    }
                 }
                 UtalCollision coll = null;
                 if(otherBoxCollider.CheckSphereOnCorners(this, out coll))
@@ -60,14 +76,21 @@ public class UtalSphereCollider : UtalCollider
                     UtalCollision utalCollisionOther = new UtalCollision();
                     utalCollisionOther.collisionPoint = coll.collisionPoint;
                     utalCollisionOther.other = this;
-
-                    utalRigidbody?.UtalOnCollisionEnter(coll);
-                    other.utalRigidbody?.UtalOnCollisionEnter(utalCollisionOther);
-                    return true;
+                    if(isTrigger || other.isTrigger)
+                    {
+                        CheckTrigger(other);
+                        return false;
+                    }
+                    else
+                    {
+                        utalRigidbody?.UtalOnCollisionEnter(coll);
+                        other.utalRigidbody?.UtalOnCollisionEnter(utalCollisionOther);
+                        return true;
+                    }
                 }
             }
         }
         return false;
     }
-
+    
 }

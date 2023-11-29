@@ -16,8 +16,20 @@ public class UtalPhysicEngine : MonoBehaviour
         StaticGravity = Gravity;
         for(int i=0; i < allColliders.Count; i++)
         {
+            if(allColliders[i] == null)
+            {
+                allColliders.RemoveAt(i);
+                i--;
+                continue;
+            }
             for(int j=i+1; j < allColliders.Count; j++)
             {
+                if (allColliders[j] == null)
+                {
+                    allColliders.RemoveAt(j);
+                    j--;
+                    continue;
+                }
                 if (allColliders[i].UtalCheckCollision(allColliders[j]))
                 {
                     allColliders[i].UtalOnCollisionEnter(null);

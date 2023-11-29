@@ -19,8 +19,16 @@ public class UtalBoxCollider : UtalCollider
             {
                 if (otherBox.CheckPointInVolume(mC))
                 {
-                    TriggerCollisions(mC, otherBox);
-                    return true;
+                    if (isTrigger || other)
+                    {
+                        CheckTrigger(other);
+                        return false;
+                    }
+                    else
+                    {
+                        TriggerCollisions(mC, otherBox);
+                        return true;
+                    }
                 }
             }
             if (CheckProjectedX(otherBox) || otherBox.CheckProjectedX(this))
@@ -32,10 +40,22 @@ public class UtalBoxCollider : UtalCollider
             {
                 if (CheckPointInVolume(tC))
                 {
-                    TriggerCollisions(tC, otherBox);
-                    return true;
+                    if (isTrigger || other)
+                    {
+                        CheckTrigger(other);
+                        return false;
+                    }
+                    else { 
+                        TriggerCollisions(tC, otherBox);
+                        return true;
+                    }
                 }
             }
+        }
+        UtalSphereCollider sphereCollider = other as UtalSphereCollider;
+        if (sphereCollider != null)
+        {
+            return sphereCollider.UtalCheckCollision(this);
         }
         return false;
     }
@@ -74,8 +94,16 @@ public class UtalBoxCollider : UtalCollider
             //print(gameObject.name + " proX " + v);
             if (CheckPointInVolume(v) && otherBox.CheckPointInVolume(v))
             {
-                TriggerCollisions(v, otherBox);
-                return true;
+                if (isTrigger || otherBox)
+                {
+                    CheckTrigger(otherBox);
+                    return false;
+                }
+                else
+                {
+                    TriggerCollisions(v, otherBox);
+                    return true;
+                }
             }
         }
         return false;
