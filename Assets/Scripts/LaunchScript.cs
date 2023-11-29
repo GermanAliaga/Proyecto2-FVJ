@@ -56,8 +56,6 @@ public class LaunchScript : MonoBehaviour
             transform.Rotate(Vector3.up, rotSpeed * Time.deltaTime, Space.World);
         }
 
-
-
         if (Input.GetKey(KeyCode.J))
         {
             if(speed <= 100)

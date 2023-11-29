@@ -18,10 +18,6 @@ public class UtalRigidbody : MonoBehaviour
         collider.utalRigidbody = this;
         UtalPhysicEngine.allRigidbodies.Add(this);
     }
-    public void UtalOnTriggerStay(UtalCollider otherCollider)
-    {
-
-    }
     public void UtalOnCollisionEnter(UtalCollision collision)
     {
         UtalSphereCollider mySphereCollider = collider as UtalSphereCollider;
@@ -37,9 +33,6 @@ public class UtalRigidbody : MonoBehaviour
             {
                 velocity *= -1;
                 velocity += proyection * 2;
-            }
-            else if(isStatic){
-                return;
             }
             else
             {
@@ -57,18 +50,6 @@ public class UtalRigidbody : MonoBehaviour
                 }
             }
             
-        }
-        UtalBoxCollider utalBoxCollider = collision.other as UtalBoxCollider;
-        if(utalBoxCollider != null && mySphereCollider !=null)
-        {
-            Vector3 inNormal = transform.position- collision.collisionPoint;
-            Plane plane = new Plane(inNormal, collision.collisionPoint);
-            Vector3 proyection = Vector3.ProjectOnPlane(velocity, inNormal);
-            if (collision.other.utalRigidbody.isStatic)
-            {
-                velocity *= -1;
-                velocity += proyection * 2;
-            }
         }
 
     }

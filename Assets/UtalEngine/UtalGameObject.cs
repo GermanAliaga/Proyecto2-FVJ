@@ -13,17 +13,12 @@ public class UtalGameObject : MonoBehaviour
     {
         myCollider = GetComponent<UtalCollider>();
         myCollider.UtalOnCollisionEnterListener = UtalOnCollisionEnter;
-        myCollider.UtalOnTriggerStayListener = UtalOnTriggerStay;
         myRenderer = GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
-    public virtual void UtalOnCollisionEnter(UtalCollision collision)
+    public void UtalOnCollisionEnter(UtalCollision collision)
     {
         myRenderer.material.color = Color.green;
-    }
-    public virtual void UtalOnTriggerStay(UtalCollider collider)
-    {
-
     }
 }

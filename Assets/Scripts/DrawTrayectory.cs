@@ -7,7 +7,7 @@ public class DrawTrayectory : MonoBehaviour
     public LineRenderer lineRenderer;
     public int N = 120;
     public int framesPerSecond = 20;
-    public Rigidbody utalRBody;
+    public UtalRigidbody utalRBody;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +20,6 @@ public class DrawTrayectory : MonoBehaviour
         Vector3[] futurePositions = new Vector3[N];
         Vector3[] futureVelocity = new Vector3[N];
         futurePositions[0] = transform.position;
-        if (utalRBody == null)
-        {
-            return;
-        }
         futureVelocity[0] = utalRBody.velocity;
         for(int i=1; i < N; i++)
         {
