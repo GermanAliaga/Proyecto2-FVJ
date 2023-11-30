@@ -7,6 +7,7 @@ public class PhysicsManager : MonoBehaviour
     public Node nodeHigh;
     public Node nodeLow;
     public SpringScript spring;
+    public bool arriba;
 
     public float g = 9.8f;
 
@@ -57,16 +58,36 @@ public class PhysicsManager : MonoBehaviour
 
     void integrateExplicitEuler()
     {
-        float force;
-        nodeLow.position = nodeLow.position + h * nodeLow.vel;
-        force = -nodeLow.mass * g + spring.k * (spring.length - spring.lengthIni);
-        nodeLow.vel += h * force / nodeLow.mass;
+        if(arriba != true)
+        {
+            float force;
+            nodeLow.position = nodeLow.position + h * nodeLow.vel;
+            force = -nodeLow.mass * g + spring.k * (spring.length - spring.lengthIni);
+            nodeLow.vel += h * force / nodeLow.mass;
+        }
+        else
+        {
+            float force;
+            nodeLow.position = nodeLow.position + h * nodeLow.vel;
+            force = nodeLow.mass * g + spring.k * (spring.length - spring.lengthIni);
+            nodeLow.vel -= h * force / nodeLow.mass;
+        }
     }
     void integrateSymplecticEuler()
     {
-        float force;
-        force = -nodeLow.mass * g + spring.k * (spring.length - spring.lengthIni);
-        nodeLow.vel += h * force / nodeLow.mass;
-        nodeLow.position = nodeLow.position + h * nodeLow.vel;
+        if(arriba != true)
+        {
+            float force;
+            force = -nodeLow.mass * g + spring.k * (spring.length - spring.lengthIni);
+            nodeLow.vel += h * force / nodeLow.mass;
+            nodeLow.position = nodeLow.position + h * nodeLow.vel;
+        }
+        else
+        {
+            float force;
+            force = nodeLow.mass * g + spring.k * (spring.length - spring.lengthIni);
+            nodeLow.vel -= h * force / nodeLow.mass;
+            nodeLow.position = nodeLow.position + h * nodeLow.vel;
+        }
     }
 }
