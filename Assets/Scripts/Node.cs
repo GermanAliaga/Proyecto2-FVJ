@@ -2,24 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpringScript : MonoBehaviour
+public class Node : MonoBehaviour
 {
-    public float k = 100f;
-    public float lengthIni;
-    public float length;
+    public float mass = 5f;
     public float position;
-    public float size = 2f;
+    public float vel;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-
+        position = transform.position.y;
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.position = new Vector3(transform.position.x, position, transform.position.z);
-        transform.localScale = new Vector3(transform.localScale.x, length / size, transform.localScale.z);
     }
 }
