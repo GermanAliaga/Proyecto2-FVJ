@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class CanvasScript : MonoBehaviour
 {
-    public LaunchScript launchScript;
-    public WindBehavior windBehavior;
+    [SerializeField] private LaunchScript launchScript;
+    [SerializeField] private WindBehavior windBehavior;
+    [SerializeField] private PointManager pointManager;
 
-    public TextMeshProUGUI vector;
-    public TextMeshProUGUI speed;
-    public TextMeshProUGUI mass;
-    public TextMeshProUGUI wind;
+    [SerializeField] private TextMeshProUGUI vector;
+    [SerializeField] private TextMeshProUGUI speed;
+    [SerializeField] private TextMeshProUGUI mass;
+    [SerializeField] private TextMeshProUGUI wind;
+    [SerializeField] private TextMeshProUGUI points;
 
     // Start is called before the first frame update
     void Start()
@@ -26,5 +28,6 @@ public class CanvasScript : MonoBehaviour
         speed.text = "Fuerza de lanzamiento: " + launchScript.speed.ToString("0");
         mass.text = "Masa del projectil: " + launchScript.mass.ToString("0");
         wind.text = "Velocidad del viento: " + windBehavior.windForceMagnitude.ToString("0"); ;
+        points.text = "Puntaje: " + pointManager.getPoints().ToString("0");
     }
 }

@@ -10,7 +10,7 @@ public class LaunchScript : MonoBehaviour
     public UtalGameObject apuntado;
 
     public UtalGameObject proyectil;
-    public UtalGameObject newP;
+    private UtalGameObject newP;
 
     public float speed;
     public float rotSpeed;

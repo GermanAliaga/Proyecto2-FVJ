@@ -21,7 +21,11 @@ public class WindBehavior : UtalGameObject
     }
     public override void UtalOnTriggerStay(UtalCollider collider)
     {
-        //Debug.Log(collider.utalRigidbody.gameObject.name);
-        collider.utalRigidbody.AddForce(-Vector3.right * windForceMagnitude);
+
+        if(collider.GetComponent<Node>() == null)
+        {
+            collider.utalRigidbody.AddForce(-Vector3.right * windForceMagnitude);
+
+        }
     }
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 258370023763404746}
   - component: {fileID: 8012613836158589998}
   - component: {fileID: 9112111274771359838}
+  - component: {fileID: 5354815532596195675}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -104,7 +105,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2
@@ -117,7 +118,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6688456097973561788}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e40c3ef562327f49951794bf9a1311a, type: 3}
   m_Name: 
@@ -140,11 +141,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   apuntado: {fileID: 8079064824939611042}
-  proyectil: {fileID: 37051512082271138, guid: d2889f27463df794393dc02ac0dc1d95, type: 3}
-  newP: {fileID: 0}
+  proyectil: {fileID: -3225778158712196065, guid: d2889f27463df794393dc02ac0dc1d95, type: 3}
   speed: 30
   rotSpeed: 100
   mass: 30
+--- !u!114 &5354815532596195675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6688456097973561788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b3df8689ca1f141bcc2cfb650a901a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6733749498377068369
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +183,7 @@ Transform:
   m_GameObject: {fileID: 6733749498377068369}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.099, y: 0.9, z: 0.052}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

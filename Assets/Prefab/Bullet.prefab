@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 3671304456079701733}
   - component: {fileID: 2042924234505946329}
   - component: {fileID: 6783908943592639298}
-  - component: {fileID: 37051512082271138}
   - component: {fileID: 2060057351901853364}
   - component: {fileID: 2919942965932520705}
   - component: {fileID: 1885617449621300723}
   - component: {fileID: -3225778158712196065}
+  - component: {fileID: 3337843338771234154}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 8588176912713210000}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071071, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: -4.6, y: 16.6, z: -3}
+  m_LocalPosition: {x: -19.403698, y: 16.210253, z: -25.789896}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -104,20 +104,6 @@ MonoBehaviour:
   myTransform: {fileID: 6663577368520220943}
   utalRigidbody: {fileID: 2060057351901853364}
   isTrigger: 0
---- !u!114 &37051512082271138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8588176912713210000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87d461a4acac6224ea0190033ce4736c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myCollider: {fileID: 6783908943592639298}
-  myRenderer: {fileID: 2042924234505946329}
 --- !u!114 &2060057351901853364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,6 +368,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 8588176912713210000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95d5d4dd38c36ed4baab04c0d0c3b917, type: 3}
+  m_Script: {fileID: 11500000, guid: 87d461a4acac6224ea0190033ce4736c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCollider: {fileID: 6783908943592639298}
+  myRenderer: {fileID: 2042924234505946329}
+--- !u!114 &3337843338771234154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8588176912713210000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82912211864841b4aaafe94c82c15b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCollider: {fileID: 6783908943592639298}
+  myRenderer: {fileID: 0}
+  pointManager: {fileID: 5354815532596195675, guid: 0292c8e6b7a561f4ab9ef711a59b2f2f, type: 3}
