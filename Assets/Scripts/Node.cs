@@ -7,6 +7,7 @@ public class Node : MonoBehaviour
     public float mass = 5f;
     public float position;
     public float vel;
+    public int score;
 
     // Start is called before the first frame update
     public void Start()

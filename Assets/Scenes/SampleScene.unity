@@ -512,7 +512,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349081628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -520,7 +520,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 3}
+  m_AnchoredPosition: {x: 0, y: 2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &353310625
@@ -558,6 +558,7 @@ MonoBehaviour:
   mass: 5
   position: 0
   vel: 0
+  score: 0
 --- !u!135 &353310627
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -955,6 +956,7 @@ MonoBehaviour:
   mass: 5
   position: 0
   vel: 0
+  score: 10
 --- !u!114 &660539153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1256,6 +1258,7 @@ MonoBehaviour:
   vector: {fileID: 1594299786}
   speed: {fileID: 484928940}
   mass: {fileID: 349081629}
+  score: {fileID: 327888979}
 --- !u!114 &915565354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1591,6 +1594,7 @@ MonoBehaviour:
   mass: 5
   position: 0
   vel: 0
+  score: 30
 --- !u!135 &1141809286
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1968,6 +1972,7 @@ MonoBehaviour:
   mass: 5
   position: 0
   vel: 0
+  score: 0
 --- !u!114 &1340890751 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9112111274771359838, guid: 0292c8e6b7a561f4ab9ef711a59b2f2f, type: 3}
@@ -2201,6 +2206,7 @@ MonoBehaviour:
   mass: 5
   position: 0
   vel: 0
+  score: 0
 --- !u!135 &1637921391
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2322,6 +2328,7 @@ MonoBehaviour:
   mass: 5
   position: 0
   vel: 0
+  score: 20
 --- !u!135 &1901649983
 SphereCollider:
   m_ObjectHideFlags: 0
