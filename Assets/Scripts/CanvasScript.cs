@@ -24,7 +24,7 @@ public class CanvasScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        vector.text = "Vector de lanzamiento: (" + launchScript.getVSpeed().x + ", " + launchScript.getVSpeed().y + ", " + launchScript.getVSpeed().z + ")";
+        vector.text = "Vector de lanzamiento: (" + launchScript.getVSpeed().x.ToString("0.00") + ", " + launchScript.getVSpeed().y.ToString("0.00") + ", " + launchScript.getVSpeed().z.ToString("0.00") + ")";
         speed.text = "Fuerza de lanzamiento: " + launchScript.speed.ToString("0");
         mass.text = "Masa del projectil: " + launchScript.mass.ToString("0");
         wind.text = "Velocidad del viento: " + windBehavior.windForceMagnitude.ToString("0"); ;
