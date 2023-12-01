@@ -557,6 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 5
+  positionV: {x: 0, y: 0, z: 0}
   position: 0
   vel: 0
   score: 0
@@ -883,7 +884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4553658472689556860, guid: 9aad10b949c70314789ce69d1bcb9c63, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6378369492056618040, guid: 9aad10b949c70314789ce69d1bcb9c63, type: 3}
       propertyPath: m_Name
@@ -1532,7 +1533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4553658472689556860, guid: 9aad10b949c70314789ce69d1bcb9c63, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6378369492056618040, guid: 9aad10b949c70314789ce69d1bcb9c63, type: 3}
       propertyPath: m_Name
@@ -2024,6 +2025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 5
+  positionV: {x: 0, y: 0, z: 0}
   position: 0
   vel: 0
   score: 0
@@ -2355,6 +2357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 5
+  positionV: {x: 0, y: 0, z: 0}
   position: 0
   vel: 0
   score: 0

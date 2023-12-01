@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 5
+  positionV: {x: 0, y: 0, z: 0}
   position: 0
   vel: 0
   score: 10
@@ -167,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
-  dontUseGravity: 0
+  dontUseGravity: 1
   mass: 1
   isStatic: 0
   collider: {fileID: 2080138984767372943}

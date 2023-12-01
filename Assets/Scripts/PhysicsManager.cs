@@ -8,7 +8,7 @@ public class PhysicsManager : MonoBehaviour
     public Node nodeLow;
     public SpringScript spring;
 
-    public float g = 9.8f;
+    public float g = -9.8f;
 
     public enum integration
     {
@@ -30,43 +30,13 @@ public class PhysicsManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-    }
-
-    private void FixedUpdate()
-    {
-        switch (integrationMethod)
-        {
-            case integration.ExplicitEuler:
-                integrateExplicitEuler();
-                break;
-
-            case integration.SymplecticEuler:
-                integrateSymplecticEuler();
-                break;
-
-            default:
-                print("error lol");
-                break;
-        }
-
         spring.length = nodeHigh.position - nodeLow.position;
         spring.position = (nodeHigh.position + nodeLow.position) / 2f;
-    }
 
-    void integrateExplicitEuler()
-    {
         float force;
-        nodeLow.position = nodeLow.position + h * nodeLow.vel;
-        force = -nodeLow.mass * g + spring.k * (spring.length - spring.lengthIni);
-        nodeLow.vel += h * force / nodeLow.mass;
-    }
-    void integrateSymplecticEuler()
-    {
-        float force;
-        force = -nodeLow.mass * g + spring.k * (spring.length - spring.lengthIni);
-        nodeLow.vel += h * force / nodeLow.mass;
-        nodeLow.position = nodeLow.position + h * nodeLow.vel;
+        force = spring.k * (spring.length - spring.lengthIni) + nodeLow.GetComponent<UtalRigidbody>().mass * g;
+        nodeLow.GetComponent<UtalRigidbody>().AddForce(new Vector3(0, force, 0));
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Node : MonoBehaviour
 {
     public float mass = 5f;
+    public Vector3 positionV;
     public float position;
     public float vel;
     public int score;
@@ -16,12 +17,14 @@ public class Node : MonoBehaviour
     {
         rb2D = GetComponent<UtalRigidbody>();
         position = transform.position.y;
+        positionV = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x, position, transform.position.z);
+        position = transform.position.y;
+        transform.position = new Vector3(positionV.x, transform.position.y, positionV.z);
 
         if(rb2D != null )
         {
