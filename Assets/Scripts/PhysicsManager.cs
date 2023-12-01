@@ -7,7 +7,6 @@ public class PhysicsManager : MonoBehaviour
     public Node nodeHigh;
     public Node nodeLow;
     public SpringScript spring;
-    public bool arriba;
 
     public float g = -9.8f;
 
