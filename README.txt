@@ -1,6 +1,6 @@
 Vicente Villavicencio
 German Aliaga
 
-APUNTAR: 		WASD
+APUNTAR: 		W(arriba)- A(izquierda)- S(abajo)- D(derecha)
 DISPARAR: 		E
-VELOCIDAD Y MASA: 	IJKL
+VELOCIDAD Y MASA: 	I(más masa)- J(más fuerza)- K(menos masa)- L(menos fuerza)
